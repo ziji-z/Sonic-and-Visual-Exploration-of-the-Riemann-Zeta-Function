@@ -132,7 +132,6 @@ Mesmerizing. Let's look at some other ones just for fun. Here's after plugging a
 
 https://github.com/zijiamherst/complexFinal/assets/89825023/0f99c758-321d-477e-8b57-6262c576ea63
 
-Kind of reminds me of the Fibonacci spiral as x tends to 0...
 
 
 
