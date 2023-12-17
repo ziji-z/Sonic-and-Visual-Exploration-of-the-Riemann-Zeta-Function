@@ -11,7 +11,7 @@ The Riemann Zeta function $\zeta(s)$ holds a place in mathematical lore. Most fa
 Instead I want to explore the magical properties of the function sonically, whilst supported by graphical information to hear and see exactly what is happening with this important function. One can easily imagine with the graph below that the Riemann Zeta function possesses some beautiful symmetries.
 
 <p align="center">
-  <img src='/final/Riemann%20Zeta%20Graph.png' width='500'>
+  <img src='final/Riemann%20Zeta%20Graph.png' width='500'>
 </p>
 
 The idea is to create something beautiful, representative, and generative. I have always been fascinated by systemically generative music (think modular systems) and I want to truly utilize the properties of the Riemann Zeta function within the soul of the system.
@@ -85,8 +85,8 @@ while difference >= epsilon:
 Note how we used epsilon to determine when to stop the program by calculating the difference of each subsequent partial sum. Here are some example of the graphs of the partial sums.
 
 <p align = "center">
-  <img src="/final/1.0616%20-%20i9.png" caption="" style="width:30%">
-  <img src="/final/1.11%20-%20i7.png" alt="z = 1.11 - i7" style="width:30%">
+  <img src="final/1.0616%20-%20i9.png" caption="" style="width:30%">
+  <img src="final/1.11%20-%20i7.png" alt="z = 1.11 - i7" style="width:30%">
 </p>
 
 Pretty cool! Now let's listen to it. The video should be submitted as *convergence sound.mp4*. It includes a little animation of the Riemann Zeta converging. Here's what's happening in the clip and what you're listening to. While the python script is churning out the partial sums (which are logged in the terminal in the upper right of the video) pd (the sound software) take the real component of the current partial sum and roughly translates it to a pitch (specifically it multiplies the real component by 300 to convert it to hz). A minor chord is then built off of that base note that gradually changes as we increment the partial sum. The time in between each new increment and the way the chord is held out (in the adsr~ block in pd) is determined by the log of the modulus of the current partial sum and previous one. Thus as the series reaches closer to convergence the chord speed up and last much shorter. The python code and pd file are included in the convergence folder.
