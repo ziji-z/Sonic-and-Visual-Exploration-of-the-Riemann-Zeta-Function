@@ -48,7 +48,7 @@ We can easily see that using the previous definition of $\zeta(s) = \sum_{n=1}^{
 </p>
 
 The continuation yields the following *functional equation*:
-$$\zeta(1-s) = \frac{2}{{2\pi}^s} \Gamma(s) \cos{\frac{\pi s}{2}} \zeta(s)$$
+$$\zeta(1-s) = \frac{2} { {2\pi}^s} \Gamma(s) \cos{\frac{\pi s}{2}} \zeta(s)$$
 Where the Gamma function can be functionally defined as $\Gamma(n) = (n-1)!$ if $n$ is real, and the integral $\int_{0}^{\infty} t^{z-1}e^{-t} \,dt$. The exact derivation of the *functional equation* is explained quite well [here](https://desvl.xyz/2022/11/24/riemann-zeta-continuation/).
 
 ## Sonic Exploration
@@ -88,6 +88,43 @@ Note how we used epsilon to determine when to stop the program by calculating th
   <img src="/final/1.0616%20-%20i9.png" caption="" style="width:30%">
   <img src="/final/1.11%20-%20i7.png" alt="z = 1.11 - i7" style="width:30%">
 </p>
+
+Pretty cool! Now let's listen to it. The video should be submitted as *convergence sound.mp4*. It includes a little animation of the Riemann Zeta converging. Here's what's happening in the clip and what you're listening to. While the python script is churning out the partial sums (which are logged in the terminal in the upper right of the video) pd (the sound software) take the real component of the current partial sum and roughly translates it to a pitch (specifically it multiplies the real component by 300 to convert it to hz). A minor chord is then built off of that base note that gradually changes as we increment the partial sum. The time in between each new increment and the way the chord is held out (in the adsr~ block in pd) is determined by the log of the modulus of the current partial sum and previous one. Thus as the series reaches closer to convergence the chord speed up and last much shorter. The python code and pd file are included in the convergence folder.
+
+## Critical Strip and Zeroes
+That was pretty cool, though it doesn't really utilize the most magical part of the Riemann Zeta function which lies in its analytic continuation and the non-trivial zeroes on the hypothesized critical line of $\text{Re}(z) = 1/2$. The idea would be to sonically lock onto the zeroes as we move around the critical strip. A sea of chaos with sudden and seemingly random bouts of harmony.
+
+
+Of course, to do so we would need to write the code for the analytic continuation of the function. We will use the following series which "was conjectured by Knopp around 1930, proved by Hasse (1930), and rediscovered by Sondow (1994)" [from Mathworld, Wolfram](https://mathworld.wolfram.com/RiemannZetaFunction.html)
+
+$$\zeta(s) = \frac{1}{1 - 2^{1-s}} \sum_{n=0}^{\infty} \frac{1}{2^{n+1}}\sum_{k=0}^{n} (-1)^k \binom{n}{k} (k+1)^{-s}, \text{ where } \binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+
+As we did previously, with this infinite sum we can only simply break it into a sequence of partial sum that terminates once the difference is small enough with epsilon. 
+
+```python
+epsilon = 0.00000001
+difference = float('inf')
+previous = 0
+psum = 0
+ppsum = 0
+n = 0 #initialize zero
+
+while difference >= epsilon:
+    ppsum = 0
+    for k in range(0, n + 1):
+        complexcomponent = cmath.exp(-s * cmath.log(k+1))     
+        ppsum = ppsum + (-1)**k * (math.factorial(n)/(math.factorial(k)*math.factorial(n-k))) * complexcomponent
+    psum = (1/(2**(n+1))) * ppsum + psum
+    difference = complexMod(psum, previous)
+    previous = psum 
+    n = n + 1
+
+power = (1-s) * cmath.log(2)
+denom = 1 - cmath.exp(power)
+answer = (1/denom) * psum
+```
+
+
 
 
 
