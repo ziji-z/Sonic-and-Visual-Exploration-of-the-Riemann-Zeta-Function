@@ -16,7 +16,7 @@ Instead I want to explore the magical properties of the function sonically, whil
 
 The idea is to create something beautiful, representative, and generative. I have always been fascinated by systemically generative music (think modular systems) and I want to truly utilize the properties of the Riemann Zeta function within the soul of the system.
 
-I will be utilizing a software called PureData (commonly abbreviated as pd) which is "an open source visual programming language for multimedia" made by Miller Puckett. pd provides for a more intuitive way of creating a sound system from scratch. Of course, for the more complex (pun intended) element of the project I will be using Python which I can send packets of information into pd in real time. I will also use the matplot library to show visualize what we're hearing. Lastly of course this site is written in MD on Github Pages. All of the code and snippets mentioned and written are all up on this repo (https://github.com/zijiamherst/complexFinal).
+I will be utilizing a software called PureData (commonly abbreviated as pd) which is "an open source visual programming language for multimedia" made by Miller Puckett. pd provides for a more intuitive way of creating a sound system from scratch. Of course, for the more complex (pun intended) mathematical elements of the project I will be using Python which I can send packets of information into pd in real time. I will also use the matplot library to show visualize what we're hearing. Lastly of course this site is written in MD. All of the code and snippets mentioned and written are all up on this repo under the final folder. The videos of the sound demostrations are uploaded on the Moodle discussion post. Enjoy!
 
 ## The Function
 
