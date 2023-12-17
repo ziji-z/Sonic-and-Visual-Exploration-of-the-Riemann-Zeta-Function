@@ -124,8 +124,13 @@ denom = 1 - cmath.exp(power)
 answer = (1/denom) * psum
 ```
 
+With just a few more edits, we can now look at how functions are transformed by the Riemann Zeta function! We can plug in any function as long as it doesn't hit $s = 1$ which is the only simple pole of the analytic continuation. Here is an animation that we generated of the the critical line at $\text{Re}(z) = \frac{1}{2}$ and the imaginary part from 0 to 35.
 
+https://github.com/zijiamherst/complexFinal/assets/89825023/d0577db6-49f5-4c8d-a8cb-1c9cb9a5da26
 
+Mesmerizing. Let's look at some other ones just for fun. Here's a $\text{sin}
+
+https://github.com/zijiamherst/complexFinal/assets/89825023/0f99c758-321d-477e-8b57-6262c576ea63
 
 
 
