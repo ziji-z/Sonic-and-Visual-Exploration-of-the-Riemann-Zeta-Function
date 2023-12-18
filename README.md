@@ -89,17 +89,18 @@ Note how we used epsilon to determine when to stop the program by calculating th
   <img src="final/media/1.11%20-%20i7.png" alt="z = 1.11 - i7" style="width:30%">
 </p>
 
-Pretty cool! Now let's listen to it. The video should be submitted as *convergence sound.mp4*. It includes a little animation of the Riemann Zeta converging. 
+Pretty cool! Now let's listen to it. The video should be submitted as **convergence sound.mp4**. It includes a little animation of the Riemann Zeta converging. 
 
 Here's what's happening in the clip and what you're listening to. While the python script is churning out the partial sums (which are logged in the terminal in the upper right of the video) pd (the sound software) receives it:
 <p align="center">
-  <img src='final/media/Convergence%20Receiver.png)' width='500'>
+  <img src='final/media/Convergence%20Receiver.png' width='500'>
 </p>
 and takes the real component of the current partial sum and roughly translates it to a pitch:
 <p align="center">
-  <img src='final/media/Convergence%20Convertor.png)' width='500'>
+  <img src='final/media/Convergence%20Convertor.png' width='300'>
 </p>
-A minor chord is then built off of that base note that gradually changes as we increment the partial sum. The time in between each new increment and the way the chord is held out (in the adsr~ block in pd) is determined by the log of the modulus of the current partial sum and previous one. Thus as the series reaches closer to convergence the chord speed up and last much shorter. The python code and pd file are included in the convergence folder.
+
+A minor chord is then built off of that base note that gradually changes as we increment the partial sum. The **time** block is calculated by the log of the modulus of the current partial sum and previous one. It determines the gap in between each new increment and the way the chord is held out (in the adsr~ block in pd). Thus as the series reaches closer to convergence the chord speed up and last much shorter. The python code and pd file are included in the convergence folder as **convergence.py** and **convergence.pd** in the pd folder.
 
 ## Critical Strip and Zeroes
 That was pretty cool, though it doesn't really utilize the most magical part of the Riemann Zeta function which lies in its analytic continuation and the non-trivial zeroes on the hypothesized critical line of $\text{Re}(z) = 1/2$. The idea would be to sonically lock onto the zeroes as we move around the critical strip. A sea of chaos with sudden and seemingly random bouts of harmony.
