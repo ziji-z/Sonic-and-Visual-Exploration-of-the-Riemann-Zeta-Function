@@ -1,6 +1,6 @@
 # Sonic and Visual Exploration of the Riemann Zeta Function
 Ziji Zhou |
-Professor Zhang, Math-345 Complex Analysis
+Professor Zhang, Math-345 Complex Analysis (for easier access the videos linked: [Convergent Sound](https://dai.ly/x8qo4om) and [Critical Line Sonification](https://dai.ly/x8qo4on))
 ## Introduction and Motivation
 The Riemann Zeta function $\zeta(s)$ holds a place in mathematical lore. Most famously, the analytic continuation of the Riemann Zeta function holds the question to one of the Millennial questions: The Riemann Hypothesis, which we will prove...
 
@@ -89,7 +89,7 @@ Note how we used epsilon to determine when to stop the program by calculating th
   <img src="final/media/1.11%20-%20i7.png" alt="z = 1.11 - i7" style="width:30%">
 </p>
 
-Pretty cool! Now let's listen to it. The video should be submitted as **convergence sound.mp4**. It includes a little animation of the Riemann Zeta converging. 
+Pretty cool! Now let's listen to [Convergent Sound](https://dai.ly/x8qo4om). It includes a little animation of the Riemann Zeta converging. 
 
 Here's what's happening in the clip and what you're listening to. While the python script is churning out the partial sums (which are logged in the terminal in the upper right of the video) pd (the sound software) receives it:
 <p align="center">
@@ -145,9 +145,22 @@ https://github.com/zijiamherst/complexFinal/assets/89825023/0f99c758-321d-477e-8
 
 Next up we will apply a similar but a bit more interesting and musical version of what we did with the convergence sequence to sonically represent the Riemann Zeta function applied to a line, with a special interest for the zeroes.
 
-## Hearing the Critical Line
+## Listening to the Critical Line
 
-The crux of my project is uploaded as **critical line.mp4**. Just as before, the python file associated is called **analytic continuation.py** and the pure data file **critical line.pd**. Sadly it's not terribly user friendly but with a little bit of setup and if you have pd installed anyone can plug in curves for the Riemann Zeta function and hear how my project would interpret it. Hopefully as you're listening to the project I can go through the inner workings. 
+The crux of my project is [Critical Line Sonification](https://dai.ly/x8qo4on). Just as before, the python file associated is called **analytic continuation.py** and the pure data file **critical line.pd**. Sadly it's not terribly user friendly but with a little bit of setup and if you have pd installed anyone can plug in curves for the Riemann Zeta function and hear how my project would interpret it. Hopefully as you're listening to the project I can go through the inner workings. Here's what my project looks like:
+
+<p align="center">
+  <img src='final/media/overview.png' width='300'>
+</p>
+
+The basic premise is as such. Since the importance of the zeroes on the critical line is so heavily stressed, I thought the sound should reflect that too. Thus the origin represents a point of harmony and stability and the farther away from it the more chaotic and dissonant becomes our sound.
+
+Let's look at the information receiver:
+
+<p align="center">
+  <img src='final/media/infocenter.png' width='300'>
+</p>
+
 
 
 
