@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 
+s = socket.socket()
+s.connect(("127.0.0.1",1050))
 
 def complexMod(a,b):
     x = (a.real - b.real)**2
@@ -60,24 +62,52 @@ plt.grid(linestyle='-', linewidth=1)
 plt.xlabel("real")
 plt.ylabel("imaginary")
 graph = plt.plot(xplot,yplot)[0]
-plt.xlim(-2,3)
-plt.ylim(-2,2)
+
 plt.pause(0.01)
 
-x = np.linspace(0,35, 1000)
-#plt.plot(x,f(x),color = 'red')
-for i in x:
-    rz = rzeta(complex(0.5,i),0.0000001)
+x = np.linspace(0,500, 2000)
+
+epsilon = 0.01 #threshold to find the zeroes
+iszero = 0
+
+i = 0
+
+message = "0 0 1;"
+s.send(message.encode('utf-8'))
+
+
+while True:
+    
+    rz = rzeta(complex(1/2,i),0.000001)
+    
+    radius = complexMod(rz,0)
+    
+    if radius < epsilon:
+        iszero = 1
+    else:
+        iszero = 0
+        
+    angle = math.asin(rz.real / radius) * 180/math.pi
+    
     xplot.append(rz.real)
     yplot.append(rz.imag)
     
     graph.remove()
-    plt.xlabel("i = " + str(round(i,1)))
-    # plotting newer graph
-    graph = plt.plot(xplot,yplot,color = 'g')[0]
-    #plt.xlim(min(xplot),max(xplot))
-    #plt.ylim(min(yplot),max(yplot))
-    plt.pause(0.02)
+    plt.xlabel("angle = " + str(round(angle,2)) + ", radius =" + str(round(radius,2)))
+    graph = plt.plot(xplot,yplot,color = ('r'))[0]
+    plt.pause(0.001)
+    
+    increment = 0.05 * (radius / 4)
+    if increment < 0.0005:
+        increment = 0.0005
+    i = i + increment
+    
+    
+    
+    message = str(round(radius,2)) + " " + str(round(angle,2)) + " " + str(iszero) + ";"
+    s.send(message.encode('utf-8'))
+    
+    
     
 plt.pause(10)
     
