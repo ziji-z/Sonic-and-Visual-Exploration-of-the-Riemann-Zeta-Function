@@ -1,0 +1,18 @@
+#N canvas 882 436 450 300 12;
+#X obj 69 54 inlet;
+#X text 116 59 radius;
+#X obj 78 120 expr $f1 \; if ($f1 < 2 \, 1 \, 0);
+#X text 95 99 3rd;
+#X text 233 98 5th;
+#X text 385 96 7th;
+#X obj 229 120 expr $f1 \; if ($f1 < 2 \, 0 \, 1);
+#X obj 174 210 outlet;
+#X obj 261 213 outlet;
+#X obj 422 214 outlet;
+#X obj 370 120 expr $f1 \; if ($f1 < 1 \, 0 \, 1);
+#X connect 0 0 2 0;
+#X connect 0 0 6 0;
+#X connect 0 0 10 0;
+#X connect 2 1 7 0;
+#X connect 6 1 8 0;
+#X connect 10 1 9 0;
