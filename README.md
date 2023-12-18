@@ -1,6 +1,6 @@
 # Sonic and Visual Exploration of the Riemann Zeta Function
-Ziji Zhou |
-Professor Zhang, Math-345 Complex Analysis (for easier access the videos linked: [Convergent Sound](https://dai.ly/x8qo4om) and [Critical Line Sonification](https://dai.ly/x8qo4on))
+Ziji Zhou |  Professor Zhang, Math-345 Complex Analysis 
+The videos linked are here: [Convergent Sound](https://dai.ly/x8qo4om) and [Critical Line Sonification](https://dai.ly/x8qo4on)
 ## Introduction and Motivation
 The Riemann Zeta function $\zeta(s)$ holds a place in mathematical lore. Most famously, the analytic continuation of the Riemann Zeta function holds the question to one of the Millennial questions: The Riemann Hypothesis, which we will prove...
 
@@ -150,10 +150,10 @@ Next up we will apply a similar but a bit more interesting and musical version o
 The crux of my project is [Critical Line Sonification](https://dai.ly/x8qo4on). Just as before, the python file associated is called **analytic continuation.py** and the pure data file **critical line.pd**. Sadly it's not terribly user friendly but with a little bit of setup and if you have pd installed anyone can plug in curves for the Riemann Zeta function and hear how my project would interpret it. Hopefully as you're listening to the project I can go through the inner workings. Here's what my project looks like:
 
 <p align="center">
-  <img src='final/media/overview.png' width='300'>
+  <img src='final/media/overview.png' width=600'>
 </p>
 
-The basic premise is as such. Since the importance of the zeroes on the critical line is so heavily stressed, I thought the sound should reflect that too. Thus the origin represents a point of harmony and stability and the farther away from it the more chaotic and dissonant becomes our sound.
+The basic premise is as such. Since the importance of the zeroes on the critical line is so heavily stressed, I thought the sound should reflect that too. Thus the origin represents a point of harmony and stability and the farther away from it the more chaotic and dissonant becomes our sound. 
 
 Let's look at the information receiver:
 
@@ -161,8 +161,22 @@ Let's look at the information receiver:
   <img src='final/media/infocenter.png' width='300'>
 </p>
 
+We can see that it takes three variables from our python script after converting our point to polar coordinates: the radius, the angle in degrees, and a binary indicator of whether we've hit a zero. Here's how our chords are constructed:
+
+<p align = "center">
+  <img src="final/media/chords.png" style="width:30%">
+  <img src="final/media/zerohit.png" style="width:40%">
+</p>
+
+The left one is the pulsating notes we hear constantly. You can see that radius is factored into the **chordgen** block, where certain thresholds of the radious leads to different chord qualities. It goes from a beautiful 
+and calming major 7 chords all the way to a half diminished chord (very dissonant!). The pulsations are determined by the angle of our point, the greater the angle the quicker it pulsates giving us that nauseating feeling. The right images shows the contrsutction of the higher chords hits we hear everytime we loop back to the origin. It gives that extra sense of harmony and indication that another loop has been completed, built as a major 7 chord with the 7th of the original chord as the root. With both together it creates an ethereal sound. 
 
 
+Lastly the drums:
+
+<p align="center">
+  <img src='final/media/drums.png' width='300'>
+</p>
 
 
 
