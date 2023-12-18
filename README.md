@@ -175,9 +175,13 @@ and calming major 7 chords all the way to a half diminished chord (very dissonan
 Lastly the drums:
 
 <p align="center">
-  <img src='final/media/drums.png' width='300'>
+  <img src='final/media/drums.png' width='600'>
 </p>
 
+These drums help depict the changing stability/chaos as the function moves to and away from the origin. All of the drums are randomly generated, with their rates determined by the radius and angle of our current point. When we are far away from origin, the tempo is fast, the drums become much more frequent, and there is little rhythmic pattern to be found. Once we near zero, everything slows down more, the drums sparse, with only the lightly pulsating chord as the forefront of our sound.
 
+## Acknowledgements
+
+Thank you Professor Zhang for a great semester and you patience! I know this project is quite late but I hope you enjoyed reading it! 
 
 
