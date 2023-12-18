@@ -143,6 +143,12 @@ Mesmerizing. Let's look at some other ones just for fun. Here's after plugging a
 
 https://github.com/zijiamherst/complexFinal/assets/89825023/0f99c758-321d-477e-8b57-6262c576ea63
 
+Next up we will apply a similar but a bit more interesting and musical version of what we did with the convergence sequence to sonically represent the Riemann Zeta function applied to a line, with a special interest for the zeroes.
+
+## Hearing the Critical Line
+
+The crux of my project is uploaded as **critical line.mp4**. Just as before, the python file associated is called **analytic continuation.py** and the pure data file **critical line.pd**. Sadly it's not terribly user friendly but with a little bit of setup and if you have pd installed anyone can plug in curves for the Riemann Zeta function and hear how my project would interpret it. Hopefully as you're listening to the project I can go through the inner workings. 
+
 
 
 
