@@ -16,7 +16,7 @@ Instead I want to explore the magical properties of the function sonically, whil
 
 The idea is to create something beautiful, representative, and generative. I have always been fascinated by systemically generative music (think modular systems) and I want to truly utilize the properties of the Riemann Zeta function within the soul of the system.
 
-I will be utilizing a software called PureData (commonly abbreviated as pd) which is "an open source visual programming language for multimedia" made by Miller Puckett. pd provides for a more intuitive way of creating a sound system from scratch. Of course, for the more complex (pun intended) mathematical elements of the project I will be using Python which I can send packets of information into pd in real time. I will also use the matplot library to show visualize what we're hearing. Lastly of course this site is written in MD. All of the code and snippets mentioned and written are all up on this repo under the final folder. The videos of the sound demostrations are uploaded on the Moodle discussion post. Enjoy!
+I will be utilizing a software called PureData (commonly abbreviated as pd) which is "an open source visual programming language for multimedia" made by Miller Puckett. pd provides for a more intuitive way of creating a sound system from scratch. Of course, for the more complex (pun intended) mathematical elements of the project I will be using Python which I can send packets of information into pd in real time. I will also use the matplot library to show visualize what we're hearing. Lastly of course this site is written in MD. All of the code and snippets mentioned and written are all up on this repo under the final folder.  Enjoy!
 
 ## The Function
 
@@ -52,9 +52,10 @@ $$\zeta(1-s) = \frac{2} { {2\pi}^s} \Gamma(s) \cos{\frac{\pi s}{2}} \zeta(s)$$
 Where the Gamma function can be functionally defined as $\Gamma(n) = (n-1)!$ if $n$ is real, and the integral $\int_{0}^{\infty} t^{z-1}e^{-t} \,dt$. The exact derivation of the *functional equation* is explained quite well [here](https://desvl.xyz/2022/11/24/riemann-zeta-continuation/).
 
 ## Sonic Exploration
+
 Presented with these properties of the function's convergence, analytic continuity and subsequent zeroes, and conformal mapping, there leaves a huge variety of possibilities in its sonic representation. Here's honestly just some of my brainstorming process in creating this project. I want to build up our representation bit by bit through each of these properties.
 
-## Convergence
+### Convergence
 
 Just to warm up, I think the convergence of any function is incredibly intuitive in muscical representation. In terms of cadences (ie resolving a dominant into its tonic), harmony of notes (for example moving from a tritone to a perfect fifth as the series reaches its limit), or even rhythmic patterns (polyrhythms can for example break up and then line back up over a certain time). The values themselves can also be mapped pretty straightforwardly too, there are two most obvious ways that I see fit. First are through the actual values, ie. the real and imaginary parts of the partial sums. The below code is in python calculating the Riemann Zeta function of a random $z$ with $\text{Re}(z) \in (1,3]$ and $\text{Im}(z) \in [-10,10]$.
 
@@ -102,7 +103,7 @@ and takes the real component of the current partial sum and roughly translates i
 
 A minor chord is then built off of that base note that gradually changes as we increment the partial sum. The **time** block is calculated by the log of the modulus of the current partial sum and previous one. It determines the gap in between each new increment and the way the chord is held out (in the adsr~ block in pd). Thus as the series reaches closer to convergence the chord speed up and last much shorter. The python code and pd file are included in the convergence folder as **convergence.py** and **convergence.pd** in the pd folder.
 
-## Critical Strip and Zeroes
+### Critical Strip and Zeroes
 That was pretty cool, though it doesn't really utilize the most magical part of the Riemann Zeta function which lies in its analytic continuation and the non-trivial zeroes on the hypothesized critical line of $\text{Re}(z) = 1/2$. The idea would be to sonically lock onto the zeroes as we move around the critical strip. A sea of chaos with sudden and seemingly random bouts of harmony.
 
 
@@ -145,7 +146,7 @@ https://github.com/zijiamherst/complexFinal/assets/89825023/0f99c758-321d-477e-8
 
 Next up we will apply a similar but a bit more interesting and musical version of what we did with the convergence sequence to sonically represent the Riemann Zeta function applied to a line, with a special interest for the zeroes.
 
-## Listening to the Critical Line
+### Listening to the Critical Line
 
 The crux of my project is [Critical Line Sonification](https://dai.ly/x8qo4on). Just as before, the python file associated is called **analytic continuation.py** and the pure data file **critical line.pd**. Sadly it's not terribly user friendly but with a little bit of setup and if you have pd installed anyone can plug in curves for the Riemann Zeta function and hear how my project would interpret it. Hopefully as you're listening to the project I can go through the inner workings. Here's what my project looks like:
 
@@ -182,6 +183,6 @@ These drums help depict the changing stability/chaos as the function moves to an
 
 ## Acknowledgements
 
-Thank you Professor Zhang for a great semester and you patience! I know this project is quite late but I hope you enjoyed reading it! 
+Thank you Professor Zhang for a great semester and you patience! I know this project is quite late but I really wanted to build something interactive and creative, I hope you liked it! I had a lot of fun making this and exploring the function. Also, most of what I know with sound art and pd comes from Professor Brian House's Sound Art class, some really really cool explorations in there. I hope this project is interesting and feel free to mess around with my code and see if it sparks any further creative math projects!
 
 
