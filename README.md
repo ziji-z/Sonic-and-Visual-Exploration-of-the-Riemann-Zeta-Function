@@ -182,6 +182,9 @@ Lastly the drums:
 
 These drums help depict the changing stability/chaos as the function moves to and away from the origin. All of the drums are randomly generated, with their rates determined by the radius and angle of our current point. When we are far away from origin, the tempo is fast, the drums become much more frequent, and there is little rhythmic pattern to be found. Once we near zero, everything slows down more, the drums sparse, with only the lightly pulsating chord as the forefront of our sound.
 
+
+While I wasn't able to make the files super user friendly, it's actually pretty simply to try plugging in any curve into the python file and see what the Riemann Zeta function would return and to listen to the sonification of any curve.
+
 ## Acknowledgements
 
 Thank you Professor Zhang for a great semester and you patience! I know this project is quite late but I really wanted to build something interactive and creative, I hope you liked it! I had a lot of fun making this and exploring the function. Also, most of what I know with sound art and pd comes from Professor Brian House's Sound Art class, some really really cool explorations in there. I hope this project is interesting and feel free to mess around with my code and see if it sparks any further creative math projects!
