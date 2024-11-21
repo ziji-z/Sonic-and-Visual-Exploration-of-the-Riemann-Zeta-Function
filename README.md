@@ -1,7 +1,7 @@
 # Sonic and Visual Exploration of the Riemann Zeta Function
 Ziji Zhou |  Professor Zhang, Math-345 Complex Analysis 
 
-If you do feel too lazy to parse through this, the main result of this project is [Critical Line Sonification](https://dai.ly/x8qo4on), and you can jump to [that part](### Listening to the Critical Line)
+If you do feel too lazy to parse through this, the main result of this project is [Critical Line Sonification](https://dai.ly/x8qo4on), and you can jump to [that part](#listening-to-the-critical-line)
 ## Introduction and Motivation
 The Riemann Zeta function $\zeta(s)$ holds a place in mathematical lore. Most famously, the analytic continuation of the Riemann Zeta function holds the question to one of the Millennial questions: The Riemann Hypothesis, which we will prove...
 
